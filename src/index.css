@@ -28,6 +28,19 @@ button.primary {
   color: white;
 }
 
+button.delete {
+  background-color: wheat;
+  padding: 0.25rem 1rem;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+button.edit {
+  background-color: var(--green);
+  color: white;
+}
+
 .app {
   margin: 0 auto;
   max-width: 1200px;

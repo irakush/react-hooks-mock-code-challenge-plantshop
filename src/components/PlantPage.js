@@ -24,11 +24,27 @@ function PlantPage() {
       return plant.name.toLowerCase().includes(searchStr.toLowerCase())
   })
 
+  const handleDelete = (e) => {
+    const { id } = e.target
+
+    fetch(URL + `/${id}`, {
+      method:"DELETE"
+    })
+      .then(deletePlantFromArray (id))
+  }
+  function deletePlantFromArray (id) {
+    const delPlantsArr = plantArray.filter(plant => {
+        return plant.id != id
+    })
+
+    setPlantArray(delPlantsArr)
+  }
+
   return (
     <main>
       <NewPlantForm plantArray={filteredArray} setPlantArray={setPlantArray} />
       <Search handleSearch={handleSearch} />
-      <PlantList plantArray={filteredArray} />
+      <PlantList plantArray={filteredArray} handleDelete={handleDelete} />
     </main>
   );
 }
