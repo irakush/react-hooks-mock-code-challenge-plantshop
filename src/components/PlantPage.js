@@ -30,11 +30,12 @@ function PlantPage() {
     fetch(URL + `/${id}`, {
       method:"DELETE"
     })
-      .then(deletePlantFromArray (id))
+      .then(deletePlantFromArray(id))
   }
+
   function deletePlantFromArray (id) {
     const delPlantsArr = plantArray.filter(plant => {
-        return plant.id != id
+        return plant.id !== id
     })
 
     setPlantArray(delPlantsArr)

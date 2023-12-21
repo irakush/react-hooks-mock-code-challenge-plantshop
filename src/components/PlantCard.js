@@ -20,7 +20,7 @@ function PlantCard({ plant, handleDelete }) {
         <button onClick={handleInStock} >Out of Stock</button>
       )}
       <br></br>
-      <button className="edit"  >Edit</button>
+      <button className="edit" id={plant.id} >Edit</button>
       <button className="delete" id={plant.id} onClick={handleDelete} >Delete</button>
     </li>
   );
